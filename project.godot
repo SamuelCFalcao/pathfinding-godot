@@ -1,0 +1,12 @@
+config_version=5
+[application]
+config/name="Pathfinding - Grid, Waypoints e Navmesh"
+run/main_scene="res://cenas/laboratorio.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+[display]
+window/size/viewport_width=1152
+window/size/viewport_height=648
+window/stretch/mode="canvas_items"
+[rendering]
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.96, 0.97, 0.99, 1)
