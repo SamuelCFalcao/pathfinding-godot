@@ -89,6 +89,7 @@ text = "P0"
 [node name="P1" type="Marker2D" parent="Mapa/Pontos" unique_id=1790244008]
 position = Vector2(456, 384)
 script = ExtResource("4")
+vizinhos = [2, 7]
 
 [node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P1" unique_id=1604745682]
 color = Color(0.64, 0.39, 0.11, 1)
