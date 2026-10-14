@@ -1,19 +1,12 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene format=3 uid="uid://bb8xqr8kwyf1u"]
 
-[ext_resource type="Script" path="res://apoio/laboratorio.gd" id="1"]
-
-[ext_resource type="Script" path="res://apoio/agente.gd" id="2"]
-
-[ext_resource type="Script" path="res://apoio/visual.gd" id="3"]
-
-[ext_resource type="Script" path="res://apoio/ponto.gd" id="4"]
-
-[ext_resource type="Script" path="res://aluno/grade.gd" id="5"]
-
-[ext_resource type="Script" path="res://aluno/waypoints.gd" id="6"]
-
-[ext_resource type="Script" path="res://aluno/malha.gd" id="7"]
-
+[ext_resource type="Script" uid="uid://dirj1ic4fdb5r" path="res://apoio/laboratorio.gd" id="1"]
+[ext_resource type="Script" uid="uid://bye6opgfyjjx2" path="res://apoio/agente.gd" id="2"]
+[ext_resource type="Script" uid="uid://ck3psas7nhyxd" path="res://apoio/visual.gd" id="3"]
+[ext_resource type="Script" uid="uid://ci177kcf1s7sw" path="res://apoio/ponto.gd" id="4"]
+[ext_resource type="Script" uid="uid://c4jptm0r8p1g3" path="res://aluno/grade.gd" id="5"]
+[ext_resource type="Script" uid="uid://cxpamcywsxsp4" path="res://aluno/waypoints.gd" id="6"]
+[ext_resource type="Script" uid="uid://duadjh6skuc1y" path="res://aluno/malha.gd" id="7"]
 [ext_resource type="NavigationPolygon" path="res://cenas/malha.tres" id="8"]
 
 [sub_resource type="RectangleShape2D" id="Parede"]
@@ -26,277 +19,261 @@ size = Vector2(192, 48)
 size = Vector2(48, 96)
 
 [sub_resource type="CircleShape2D" id="Agente"]
-radius = 10.0
 
-[node name="Laboratorio" type="Node2D"]
+[node name="Laboratorio" type="Node2D" unique_id=1015947597]
 script = ExtResource("1")
 
-[node name="Visual" type="Node2D" parent="."]
+[node name="Visual" type="Node2D" parent="." unique_id=272813669]
 script = ExtResource("3")
 
-[node name="Grade" type="Node2D" parent="Visual"]
+[node name="Grade" type="Node2D" parent="Visual" unique_id=1543431004]
 
-[node name="Arestas" type="Node2D" parent="Visual"]
+[node name="Arestas" type="Node2D" parent="Visual" unique_id=181207239]
 
-[node name="Malha" type="Node2D" parent="Visual"]
+[node name="Malha" type="Node2D" parent="Visual" unique_id=365618395]
 
-[node name="Mapa" type="Node2D" parent="."]
+[node name="Mapa" type="Node2D" parent="." unique_id=521553279]
 
-[node name="Regiao" type="NavigationRegion2D" parent="Mapa"]
+[node name="Regiao" type="NavigationRegion2D" parent="Mapa" unique_id=1676209893]
 navigation_polygon = ExtResource("8")
 
-[node name="Parede" type="StaticBody2D" parent="Mapa/Regiao"]
+[node name="Parede" type="StaticBody2D" parent="Mapa/Regiao" unique_id=1784355528]
 position = Vector2(576, 384)
-collision_layer = 1
 collision_mask = 0
 
-[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/Parede"]
+[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/Parede" unique_id=938759334]
 shape = SubResource("Parede")
 
-[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/Parede"]
-polygon = PackedVector2Array(-48.0, -120.0, 48.0, -120.0, 48.0, 120.0, -48.0, 120.0)
+[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/Parede" unique_id=87723268]
 color = Color(0.42, 0.49, 0.54, 1)
+polygon = PackedVector2Array(-48, -120, 48, -120, 48, 120, -48, 120)
 
-[node name="TopoIlha" type="StaticBody2D" parent="Mapa/Regiao"]
+[node name="TopoIlha" type="StaticBody2D" parent="Mapa/Regiao" unique_id=654775458]
 position = Vector2(960, 480)
-collision_layer = 1
 collision_mask = 0
 
-[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/TopoIlha"]
+[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/TopoIlha" unique_id=1946119552]
 shape = SubResource("TopoIlha")
 
-[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/TopoIlha"]
-polygon = PackedVector2Array(-96.0, -24.0, 96.0, -24.0, 96.0, 24.0, -96.0, 24.0)
+[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/TopoIlha" unique_id=1101206196]
 color = Color(0.42, 0.49, 0.54, 1)
+polygon = PackedVector2Array(-96, -24, 96, -24, 96, 24, -96, 24)
 
-[node name="LadoIlha" type="StaticBody2D" parent="Mapa/Regiao"]
+[node name="LadoIlha" type="StaticBody2D" parent="Mapa/Regiao" unique_id=689009630]
 position = Vector2(888, 552)
-collision_layer = 1
 collision_mask = 0
 
-[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/LadoIlha"]
+[node name="Colisao" type="CollisionShape2D" parent="Mapa/Regiao/LadoIlha" unique_id=999962298]
 shape = SubResource("LadoIlha")
 
-[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/LadoIlha"]
-polygon = PackedVector2Array(-24.0, -48.0, 24.0, -48.0, 24.0, 48.0, -24.0, 48.0)
+[node name="Visual" type="Polygon2D" parent="Mapa/Regiao/LadoIlha" unique_id=614968130]
 color = Color(0.42, 0.49, 0.54, 1)
+polygon = PackedVector2Array(-24, -48, 24, -48, 24, 48, -24, 48)
 
-[node name="Pontos" type="Node2D" parent="Mapa"]
+[node name="Pontos" type="Node2D" parent="Mapa" unique_id=627893732]
 
-[node name="P0" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P0" type="Marker2D" parent="Mapa/Pontos" unique_id=2062173242]
 position = Vector2(168, 384)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(1)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P0"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P0" unique_id=343833396]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P0"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P0" unique_id=342185420]
 offset_left = -10.0
 offset_top = -28.0
-text = "P0"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P0"
 
-[node name="P1" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P1" type="Marker2D" parent="Mapa/Pontos" unique_id=1790244008]
 position = Vector2(456, 384)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(2, 7)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P1"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P1" unique_id=1604745682]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P1"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P1" unique_id=1302767651]
 offset_left = -10.0
 offset_top = -28.0
-text = "P1"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P1"
 
-[node name="P2" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P2" type="Marker2D" parent="Mapa/Pontos" unique_id=1710747472]
 position = Vector2(456, 216)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(3)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P2"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P2" unique_id=963533489]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P2"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P2" unique_id=1060048388]
 offset_left = -10.0
 offset_top = -28.0
-text = "P2"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P2"
 
-[node name="P3" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P3" type="Marker2D" parent="Mapa/Pontos" unique_id=985338194]
 position = Vector2(696, 216)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(4)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P3"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P3" unique_id=1898946147]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P3"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P3" unique_id=1671123105]
 offset_left = -10.0
 offset_top = -28.0
-text = "P3"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P3"
 
-[node name="P4" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P4" type="Marker2D" parent="Mapa/Pontos" unique_id=1248491325]
 position = Vector2(696, 384)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(5, 6)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P4"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P4" unique_id=966077892]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P4"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P4" unique_id=577071284]
 offset_left = -10.0
 offset_top = -28.0
-text = "P4"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P4"
 
-[node name="P5" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P5" type="Marker2D" parent="Mapa/Pontos" unique_id=1335402688]
 position = Vector2(984, 384)
 script = ExtResource("4")
-vizinhos = PackedInt32Array()
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P5"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P5" unique_id=899452093]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P5"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P5" unique_id=159614384]
 offset_left = -10.0
 offset_top = -28.0
-text = "P5"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P5"
 
-[node name="P6" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P6" type="Marker2D" parent="Mapa/Pontos" unique_id=497395809]
 position = Vector2(696, 552)
 script = ExtResource("4")
-vizinhos = PackedInt32Array(7)
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P6"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P6" unique_id=1589631671]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P6"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P6" unique_id=165434365]
 offset_left = -10.0
 offset_top = -28.0
-text = "P6"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P6"
 
-[node name="P7" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P7" type="Marker2D" parent="Mapa/Pontos" unique_id=1585460311]
 position = Vector2(456, 552)
 script = ExtResource("4")
-vizinhos = PackedInt32Array()
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P7"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P7" unique_id=729494392]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P7"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P7" unique_id=1148250173]
 offset_left = -10.0
 offset_top = -28.0
-text = "P7"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P7"
 
-[node name="P8" type="Marker2D" parent="Mapa/Pontos"]
+[node name="P8" type="Marker2D" parent="Mapa/Pontos" unique_id=1969113905]
 position = Vector2(984, 576)
 script = ExtResource("4")
-vizinhos = PackedInt32Array()
 
-[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P8"]
-polygon = PackedVector2Array(7.0, 0.0, 4.95, 4.95, 0.0, 7.0, -4.95, 4.95, -7.0, 0.0, -4.95, -4.95, -0.0, -7.0, 4.95, -4.95)
+[node name="Marca" type="Polygon2D" parent="Mapa/Pontos/P8" unique_id=1615097919]
 color = Color(0.64, 0.39, 0.11, 1)
+polygon = PackedVector2Array(7, 0, 4.95, 4.95, 0, 7, -4.95, 4.95, -7, 0, -4.95, -4.95, 0, -7, 4.95, -4.95)
 
-[node name="Nome" type="Label" parent="Mapa/Pontos/P8"]
+[node name="Nome" type="Label" parent="Mapa/Pontos/P8" unique_id=211960127]
 offset_left = -10.0
 offset_top = -28.0
-text = "P8"
 theme_override_colors/font_color = Color(0.4, 0.28, 0.1, 1)
+text = "P8"
 
-[node name="Planejadores" type="Node" parent="."]
+[node name="Planejadores" type="Node" parent="." unique_id=299354566]
 
-[node name="Grade" type="Node2D" parent="Planejadores"]
+[node name="Grade" type="Node2D" parent="Planejadores" unique_id=1367966588]
 script = ExtResource("5")
 
-[node name="Waypoints" type="Node2D" parent="Planejadores"]
+[node name="Waypoints" type="Node2D" parent="Planejadores" unique_id=597691795]
 script = ExtResource("6")
 
-[node name="Malha" type="Node2D" parent="Planejadores"]
+[node name="Malha" type="Node2D" parent="Planejadores" unique_id=49719638]
 script = ExtResource("7")
 
-[node name="Rota" type="Line2D" parent="."]
+[node name="Rota" type="Line2D" parent="." unique_id=1825921923]
 width = 3.0
 default_color = Color(0.14, 0.47, 0.83, 0.8)
 
-[node name="Agente" type="CharacterBody2D" parent="."]
+[node name="Agente" type="CharacterBody2D" parent="." unique_id=1893407944]
 position = Vector2(168, 384)
-script = ExtResource("2")
-motion_mode = 1
 collision_layer = 2
-collision_mask = 1
+motion_mode = 1
+script = ExtResource("2")
 
-[node name="Colisao" type="CollisionShape2D" parent="Agente"]
+[node name="Colisao" type="CollisionShape2D" parent="Agente" unique_id=1910571182]
 shape = SubResource("Agente")
 
-[node name="Corpo" type="Polygon2D" parent="Agente"]
-polygon = PackedVector2Array(14, 0, -10, -8, -5, 0, -10, 8)
+[node name="Corpo" type="Polygon2D" parent="Agente" unique_id=1528166165]
 color = Color(0.12, 0.27, 0.4, 1)
+polygon = PackedVector2Array(14, 0, -10, -8, -5, 0, -10, 8)
 
-[node name="Alvo" type="Node2D" parent="."]
+[node name="Alvo" type="Node2D" parent="." unique_id=104637526]
 position = Vector2(984, 384)
 
-[node name="Marca" type="Polygon2D" parent="Alvo"]
-polygon = PackedVector2Array(0, -10, 10, 0, 0, 10, -10, 0)
+[node name="Marca" type="Polygon2D" parent="Alvo" unique_id=1248708113]
 color = Color(0.13, 0.63, 0.34, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, 0, 10, -10, 0)
 
-[node name="Interface" type="CanvasLayer" parent="."]
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1125106764]
 
-[node name="Titulo" type="Label" parent="Interface"]
+[node name="Titulo" type="Label" parent="Interface" unique_id=606097831]
 offset_left = 40.0
 offset_top = 18.0
 offset_right = 1120.0
 offset_bottom = 52.0
-theme_override_font_sizes/font_size = 28
 theme_override_colors/font_color = Color(0.12, 0.2, 0.27, 1)
+theme_override_font_sizes/font_size = 28
 text = "PATHFINDING"
 
-[node name="Controles" type="Label" parent="Interface"]
+[node name="Controles" type="Label" parent="Interface" unique_id=102873807]
 offset_left = 40.0
 offset_top = 58.0
 offset_right = 1120.0
 offset_bottom = 92.0
-theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.12, 0.2, 0.27, 1)
+theme_override_font_sizes/font_size = 18
 text = "1 Grid    2 Waypoints    3 Navmesh    R Rota de referência    I Ilha isolada    Clique Novo destino"
 
-[node name="Dados" type="Label" parent="Interface"]
+[node name="Dados" type="Label" parent="Interface" unique_id=2143955870]
 offset_left = 40.0
 offset_top = 91.0
 offset_right = 1120.0
 offset_bottom = 125.0
-theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.12, 0.2, 0.27, 1)
-text = ""
+theme_override_font_sizes/font_size = 18
 
-[node name="Mensagem" type="Label" parent="Interface"]
+[node name="Mensagem" type="Label" parent="Interface" unique_id=828240718]
 offset_left = 40.0
 offset_top = 121.0
 offset_right = 1120.0
 offset_bottom = 155.0
-theme_override_font_sizes/font_size = 17
 theme_override_colors/font_color = Color(0.12, 0.2, 0.27, 1)
-text = ""
+theme_override_font_sizes/font_size = 17
 
-[node name="Legenda" type="Label" parent="Interface"]
+[node name="Legenda" type="Label" parent="Interface" unique_id=2037170746]
 offset_left = 40.0
 offset_top = 616.0
 offset_right = 1120.0
 offset_bottom = 650.0
-theme_override_font_sizes/font_size = 16
 theme_override_colors/font_color = Color(0.12, 0.2, 0.27, 1)
+theme_override_font_sizes/font_size = 16
 text = "Azul: rota    Verde: destino    Cinza: parede    I: destino sem conexão com a origem"
